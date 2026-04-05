@@ -1,4 +1,4 @@
-import { Report } from '../types.js';
+import { Report } from '../types';
 
 export const reports: Report[] = [
   {

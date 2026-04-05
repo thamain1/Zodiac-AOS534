@@ -1,4 +1,4 @@
-import { HealthNode } from '../types.js';
+import { HealthNode } from '../types';
 
 export const healthNodes: HealthNode[] = [
   // ── CONTROL PLANE ──────────────────────────────────────────────────────────

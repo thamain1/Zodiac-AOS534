@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express';
-import { staticLogs, generateLogEntry } from '../fixtures/logs.js';
-import { state } from '../state.js';
+import { staticLogs, generateLogEntry } from '../fixtures/logs';
+import { state } from '../state';
 
 const router = Router();
 

@@ -8,7 +8,7 @@ import type { Scenario } from '../../types';
 const TAG_COLORS: Record<string, string> = {
   critical: 'text-critical bg-critical/10 border-critical/20',
   identity: 'text-teal-400 bg-teal-900/10 border-teal-600/20',
-  access-control: 'text-warning bg-warning/10 border-warning/20',
+  'access-control': 'text-warning bg-warning/10 border-warning/20',
   endpoint: 'text-blue-400 bg-blue-900/10 border-blue-600/20',
   cloud: 'text-purple-400 bg-purple-900/10 border-purple-600/20',
   iam: 'text-orange-400 bg-orange-900/10 border-orange-600/20',

@@ -1,4 +1,4 @@
-import { EvidenceArtifact } from '../types.js';
+import { EvidenceArtifact } from '../types';
 
 export const evidence: EvidenceArtifact[] = [
   {

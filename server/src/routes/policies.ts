@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { policies } from '../fixtures/policies.js';
+import { policies } from '../fixtures/policies';
 
 const router = Router();
 

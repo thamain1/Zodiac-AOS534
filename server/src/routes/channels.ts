@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { channels } from '../fixtures/channels.js';
+import { channels } from '../fixtures/channels';
 
 const router = Router();
 

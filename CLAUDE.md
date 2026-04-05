@@ -162,6 +162,12 @@ Server additions: HealthNode type, health fixture (15 nodes), health routes, WAP
 Screens built: Cloud Governance (4), AI Agent Governance (7), Secure Channel Visibility (10), Policies/Alerts/Config (11)
 Server additions: PolicyRecord/ChannelRecord/AgentStatus types, 4 new fixtures, 3 new routes (/policies /channels /agents-governance)
 
+## Phase 4 Status — COMPLETE
+Screens built: Roadmap / Next Waves (14)
+Polish: All 14 sidebar items activated (no more coming:true), SSE expanded to 12 agents (Bedrock/Chronicle/Sage/Helm/Canon/Relic added), GuidedDemoOverlay.tsx (5-step investor walkthrough, Header button trigger)
+Server additions: Scenarios 4–8 full step data (network drift, API inline/proxy, AI governance, storage governance, supply-chain roadmap)
+All 8 required scenarios complete. All 14 screens complete. Platform build DONE.
+
 ## Visual Design System (from image/ folder)
 
 ### Brand

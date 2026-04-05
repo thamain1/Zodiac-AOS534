@@ -1,4 +1,4 @@
-import { LogEntry } from '../types.js';
+import { LogEntry } from '../types';
 
 export function generateLogEntry(overrides: Partial<LogEntry> = {}): LogEntry {
   return {

@@ -1,4 +1,4 @@
-import { GovernedObject } from '../types.js';
+import { GovernedObject } from '../types';
 
 // Extended cloud objects for Screen 4 — Cloud Governance
 export const cloudObjects: GovernedObject[] = [

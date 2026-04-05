@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { reports } from '../fixtures/reports.js';
+import { reports } from '../fixtures/reports';
 
 const router = Router();
 

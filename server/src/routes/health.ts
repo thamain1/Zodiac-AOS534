@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { healthNodes } from '../fixtures/health.js';
+import { healthNodes } from '../fixtures/health';
 
 const router = Router();
 

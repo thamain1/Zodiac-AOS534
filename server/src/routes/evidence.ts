@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { evidence } from '../fixtures/evidence.js';
+import { evidence } from '../fixtures/evidence';
 
 const router = Router();
 

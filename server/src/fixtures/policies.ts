@@ -1,4 +1,4 @@
-import { PolicyRecord } from '../types.js';
+import { PolicyRecord } from '../types';
 
 export const policies: PolicyRecord[] = [
   // IDENTITY

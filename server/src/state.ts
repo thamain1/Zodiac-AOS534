@@ -1,7 +1,7 @@
-import { environment as envData } from './fixtures/environment.js';
-import { alerts as alertData } from './fixtures/alerts.js';
-import { scenarios as scenarioData } from './fixtures/scenarios.js';
-import { Environment, Alert, Scenario, SimulatorMode } from './types.js';
+import { environment as envData } from './fixtures/environment';
+import { alerts as alertData } from './fixtures/alerts';
+import { scenarios as scenarioData } from './fixtures/scenarios';
+import { Environment, Alert, Scenario, SimulatorMode } from './types';
 
 class AppState {
   environment: Environment = { ...envData };

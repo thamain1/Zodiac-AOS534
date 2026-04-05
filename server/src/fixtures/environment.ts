@@ -1,4 +1,4 @@
-import { Environment } from '../types.js';
+import { Environment } from '../types';
 
 export const environment: Environment = {
   id: 'env-001',

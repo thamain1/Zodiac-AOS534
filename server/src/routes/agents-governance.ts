@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { agentStatuses, interAgentMessages } from '../fixtures/agents.js';
+import { agentStatuses, interAgentMessages } from '../fixtures/agents';
 
 const router = Router();
 

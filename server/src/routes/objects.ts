@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { objects } from '../fixtures/objects.js';
+import { objects } from '../fixtures/objects';
 
 const router = Router();
 

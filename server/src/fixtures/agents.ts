@@ -1,4 +1,4 @@
-import { AgentStatus } from '../types.js';
+import { AgentStatus } from '../types';
 
 export const agentStatuses: AgentStatus[] = [
   {

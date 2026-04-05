@@ -1,4 +1,4 @@
-import { GovernedObject } from '../types.js';
+import { GovernedObject } from '../types';
 
 export const objects: GovernedObject[] = [
   // USERS

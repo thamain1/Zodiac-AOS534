@@ -1,4 +1,4 @@
-import { ChannelRecord } from '../types.js';
+import { ChannelRecord } from '../types';
 
 export const channels: ChannelRecord[] = [
   {

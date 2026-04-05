@@ -1,4 +1,4 @@
-import { TopologyNode, TopologyEdge } from '../types.js';
+import { TopologyNode, TopologyEdge } from '../types';
 
 export const topologyNodes: TopologyNode[] = [
   { id: 'node-usr-001', object_id: 'usr-001', label: 'Marcus Webb', type: 'user', x: 200, y: 180, truth_score: 92, alignment_state: 'aligned', risk_level: 'low', plane: 'identity_plane', truth_label: 'simulated' },
