@@ -1,6 +1,7 @@
 import type {
   GovernedObject, Alert, LogEntry, EvidenceArtifact,
-  Scenario, TopologyNode, TopologyEdge, Environment, Report, HealthNode
+  Scenario, TopologyNode, TopologyEdge, Environment, Report,
+  HealthNode, PolicyRecord, ChannelRecord, AgentStatus, InterAgentMessage
 } from '../types';
 
 const BASE = '/api';
@@ -86,5 +87,24 @@ export const api = {
     get: (id: string) => get<HealthNode>(`/health-nodes/${id}`),
     byPlane: (plane: 'control_plane' | 'data_plane') =>
       get<{ data: HealthNode[]; total: number }>(`/health-nodes/plane/${plane}`),
+  },
+
+  policies: {
+    list: (params?: { domain?: string; status?: string }) =>
+      get<{ data: PolicyRecord[]; total: number }>(`/policies${buildQuery(params ?? {})}`),
+    get: (id: string) => get<PolicyRecord>(`/policies/${id}`),
+    create: (body: Partial<PolicyRecord>) => post<PolicyRecord>('/policies', body),
+  },
+
+  channels: {
+    list: (params?: { status?: string; site?: string }) =>
+      get<{ data: ChannelRecord[]; total: number }>(`/channels${buildQuery(params ?? {})}`),
+    get: (id: string) => get<ChannelRecord>(`/channels/${id}`),
+  },
+
+  agentsGovernance: {
+    list: () => get<{ data: AgentStatus[]; total: number }>('/agents-governance'),
+    get: (id: string) => get<AgentStatus>(`/agents-governance/${id}`),
+    messageFeed: () => get<{ data: InterAgentMessage[]; total: number }>('/agents-governance/messages/feed'),
   },
 };

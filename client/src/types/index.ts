@@ -147,6 +147,66 @@ export interface Environment {
   truth_model?: string;
 }
 
+export interface PolicyRecord {
+  id: string;
+  name: string;
+  description: string;
+  domain: 'identity' | 'network' | 'cloud' | 'api' | 'endpoint' | 'governance';
+  status: 'active' | 'draft' | 'deprecated';
+  version: string;
+  truth_score_threshold: number;
+  action_on_fail: 'alert' | 'block' | 'restrict' | 'notify';
+  approver: string;
+  created_at: string;
+  updated_at: string;
+  truth_label: TruthLabel;
+  tags?: string[];
+}
+
+export interface ChannelRecord {
+  id: string;
+  name: string;
+  source_workload: string;
+  dest_workload: string;
+  protocol: 'mTLS' | 'TLS' | 'plaintext';
+  tls_version?: string;
+  cert_expiry?: string;
+  cert_issuer?: string;
+  spiffe_id_source?: string;
+  spiffe_id_dest?: string;
+  spire_attested: boolean;
+  pqc_ready: boolean;
+  status: 'healthy' | 'degraded' | 'expired' | 'untrusted' | 'plaintext';
+  trust_level: 'trusted' | 'partial' | 'untrusted' | 'unknown';
+  last_handshake: string;
+  site: string;
+  truth_label: TruthLabel;
+}
+
+export interface AgentStatus {
+  id: string;
+  display_name: string;
+  internal_ref: string;
+  role: string;
+  plane: PlaneTag;
+  status: 'active' | 'standby' | 'degraded' | 'offline';
+  health_score: number;
+  decisions_per_min: number;
+  last_active: string;
+  current_task: string;
+  truth_score: number;
+  confidence: number;
+  truth_label: TruthLabel;
+}
+
+export interface InterAgentMessage {
+  id: string;
+  from: string;
+  to: string;
+  message: string;
+  ts: string;
+}
+
 export interface HealthNode {
   id: string;
   name: string;

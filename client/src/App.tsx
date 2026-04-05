@@ -14,6 +14,10 @@ import { NetworkSubstrate } from './components/screens/NetworkSubstrate';
 import { AdvancedAPI } from './components/screens/AdvancedAPI';
 import { EvidenceLedger } from './components/screens/EvidenceLedger';
 import { CPDPHealth } from './components/screens/CPDPHealth';
+import { CloudGovernance } from './components/screens/CloudGovernance';
+import { PoliciesAlerts } from './components/screens/PoliciesAlerts';
+import { AIAgentGovernance } from './components/screens/AIAgentGovernance';
+import { SecureChannel } from './components/screens/SecureChannel';
 import type { Screen } from './store';
 
 function ComingSoon({ name }: { name: string }) {
@@ -33,13 +37,13 @@ function ScreenRouter({ screen }: { screen: Screen }) {
     case 'identity-governance':   return <IdentityGovernance />;
     case 'reporting-storyboards': return <ReportingStoryboards />;
     case 'scenario-playback':     return <ScenarioPlayback />;
-    case 'cloud-governance':      return <ComingSoon name="Cloud Governance" />;
+    case 'cloud-governance':      return <CloudGovernance />;
     case 'network-substrate':     return <NetworkSubstrate />;
     case 'advanced-api':          return <AdvancedAPI />;
-    case 'ai-agent-governance':   return <ComingSoon name="AI Agent Governance" />;
+    case 'ai-agent-governance':   return <AIAgentGovernance />;
     case 'evidence-ledger':       return <EvidenceLedger />;
-    case 'secure-channel':        return <ComingSoon name="Secure Channel Visibility" />;
-    case 'policies-alerts':       return <ComingSoon name="Policies / Alerts / Config" />;
+    case 'secure-channel':        return <SecureChannel />;
+    case 'policies-alerts':       return <PoliciesAlerts />;
     case 'cp-dp-health':          return <CPDPHealth />;
     case 'roadmap':               return <ComingSoon name="Roadmap / Next Waves" />;
     default:                      return <MissionOverview />;
