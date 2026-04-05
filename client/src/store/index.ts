@@ -50,6 +50,10 @@ interface AppStore {
   // Log drawer
   logDrawerOpen: boolean;
   setLogDrawerOpen: (open: boolean) => void;
+
+  // Guided demo overlay
+  guidedDemoOpen: boolean;
+  setGuidedDemoOpen: (open: boolean) => void;
 }
 
 export const useAppStore = create<AppStore>((set) => ({
@@ -80,4 +84,7 @@ export const useAppStore = create<AppStore>((set) => ({
 
   logDrawerOpen: false,
   setLogDrawerOpen: (open) => set({ logDrawerOpen: open }),
+
+  guidedDemoOpen: false,
+  setGuidedDemoOpen: (open) => set({ guidedDemoOpen: open }),
 }));

@@ -34,12 +34,18 @@ router.get('/subscribe', (req: Request, res: Response) => {
   state.sseClients.add(res as unknown as NodeJS.WritableStream);
 
   const agentMessages = [
-    { agent: 'Argus', stream: 'directory_audit', messages: ['Identity sync pulse — all registries nominal', 'RBAC validation complete — 847 identities checked'] },
-    { agent: 'Aegis', stream: 'network_substrate', messages: ['Network posture scan complete — 23 appliances checked', 'Transport layer governance nominal'] },
-    { agent: 'Apollo', stream: 'artifact_generation', messages: ['Evidence pipeline nominal — 0 queued artifacts', 'Truth model v0.98 (simulated) — all checks passing'] },
-    { agent: 'Conduit', stream: 'evidence_ingestion', messages: ['Log ingestion rate: 2,847 events/min', 'Normalization pipeline: nominal'] },
-    { agent: 'Atlas', stream: 'inter_agent', messages: ['Topology sync complete — 11 nodes, 10 edges mapped', 'Dependency graph updated'] },
-    { agent: 'Verdict', stream: 'policy_governance', messages: ['Governance engine nominal — 6 active policies', 'Decision confidence: 0.94 average'] },
+    { agent: 'Argus',    stream: 'directory_audit',         messages: ['Identity sync pulse — all registries nominal', 'RBAC validation complete — 847 identities checked', 'Session token rotation — 12 identities refreshed'] },
+    { agent: 'Aegis',    stream: 'network_substrate',        messages: ['Network posture scan complete — 23 appliances checked', 'Transport layer governance nominal', 'BGP peer validation — 4 uplinks confirmed'] },
+    { agent: 'Apollo',   stream: 'artifact_generation',      messages: ['Evidence pipeline nominal — 0 queued artifacts', 'Truth model v0.98 (simulated) — all checks passing', 'Signed artifact EVD-022 — chain-of-custody sealed'] },
+    { agent: 'Conduit',  stream: 'evidence_ingestion',       messages: ['Log ingestion rate: 2,847 events/min', 'Normalization pipeline: nominal', 'Tamper-resistant store: 0 violations detected'] },
+    { agent: 'Atlas',    stream: 'inter_agent',              messages: ['Topology sync complete — 11 nodes, 10 edges mapped', 'Dependency graph updated', 'Blast radius calculated — 3 critical paths flagged'] },
+    { agent: 'Verdict',  stream: 'policy_governance',        messages: ['Governance engine nominal — 6 active policies', 'Decision confidence: 0.94 average', 'Policy pol-003 evaluated — PASS'] },
+    { agent: 'Bedrock',  stream: 'network_substrate',        messages: ['Substrate scan — WAP-HQ-FLOOR2 WPA2-Personal risk flagged', 'Hardware attestation complete — 15 devices verified', 'Physical-layer trust score: 71'] },
+    { agent: 'Chronicle',stream: 'storyboard_generation',    messages: ['Storyboard draft compiled — Scenario 1 narrative ready', 'Executive summary updated — 3 open findings', 'Escalation package generated for identity governance event'] },
+    { agent: 'Sage',     stream: 'policy_governance',        messages: ['Plain-language advisory generated for network drift event', 'Operator guidance: review ch-007 plaintext channel', 'Context summary: cloud IAM drift — 2 over-provisioned roles'] },
+    { agent: 'Helm',     stream: 'advisory_intake',          messages: ['Threat intel validated — CISA advisory cross-referenced', 'CVE-2024-38475 enriched — confidence 0.91', 'Advisory feed: 4 new external signals processed'] },
+    { agent: 'Canon',    stream: 'standards_compliance',     messages: ['External threat scan complete — dark web monitoring nominal', 'Standards alignment check: NIST CSF 2.0 — 84% coverage', 'Emerging risk: supply-chain advisory queued for review'] },
+    { agent: 'Relic',    stream: 'evidence_ingestion',       messages: ['Historical retrieval: 14 prior artifacts surfaced for SCN-001', 'Archive query complete — matching events found: 3', 'Forensic memory sync — prior identity event correlated'] },
   ];
 
   const interval = setInterval(() => {

@@ -18,6 +18,8 @@ import { CloudGovernance } from './components/screens/CloudGovernance';
 import { PoliciesAlerts } from './components/screens/PoliciesAlerts';
 import { AIAgentGovernance } from './components/screens/AIAgentGovernance';
 import { SecureChannel } from './components/screens/SecureChannel';
+import { Roadmap } from './components/screens/Roadmap';
+import { GuidedDemoOverlay } from './components/layout/GuidedDemoOverlay';
 import type { Screen } from './store';
 
 function ComingSoon({ name }: { name: string }) {
@@ -45,7 +47,7 @@ function ScreenRouter({ screen }: { screen: Screen }) {
     case 'secure-channel':        return <SecureChannel />;
     case 'policies-alerts':       return <PoliciesAlerts />;
     case 'cp-dp-health':          return <CPDPHealth />;
-    case 'roadmap':               return <ComingSoon name="Roadmap / Next Waves" />;
+    case 'roadmap':               return <Roadmap />;
     default:                      return <MissionOverview />;
   }
 }
@@ -82,6 +84,7 @@ export default function App() {
       </div>
       <LogDrawer />
       <Footer />
+      <GuidedDemoOverlay />
     </div>
   );
 }

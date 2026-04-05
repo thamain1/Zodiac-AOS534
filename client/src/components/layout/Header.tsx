@@ -2,6 +2,7 @@ import { useAppStore } from '../../store';
 import type { SimulatorMode } from '../../types';
 import { clsx } from 'clsx';
 
+
 const MODE_LABELS: Record<SimulatorMode, string> = {
   guided: 'Guided Demo',
   free: 'Free Explore',
@@ -33,7 +34,7 @@ function StatItem({ label, value, color = 'text-white' }: { label: string; value
 }
 
 export function Header() {
-  const { environment, simulatorMode, setSimulatorMode, alerts } = useAppStore();
+  const { environment, simulatorMode, setSimulatorMode, alerts, setGuidedDemoOpen } = useAppStore();
 
   const activeAlerts = alerts.filter(a => a.status === 'active').length;
   const criticalAlerts = alerts.filter(a => a.status === 'active' && a.severity === 'critical').length;
@@ -113,6 +114,12 @@ export function Header() {
 
       {/* Right: Sim labels + logo area */}
       <div className="flex items-center gap-3">
+        <button
+          onClick={() => setGuidedDemoOpen(true)}
+          className="text-[10px] font-bold uppercase tracking-wide px-3 py-1.5 rounded border border-teal-500/40 bg-teal-500/10 text-teal-400 hover:bg-teal-500/20 hover:text-teal-300 transition-all"
+        >
+          ◎ Guided Demo
+        </button>
         <div className="flex flex-col items-end gap-0.5">
           <span className="sim-badge">Simulated Environment</span>
           <span className="text-[9px] text-slate-500 font-mono">
