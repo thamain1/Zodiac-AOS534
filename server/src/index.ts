@@ -8,6 +8,7 @@ import evidenceRouter from './routes/evidence.js';
 import reportsRouter from './routes/reports.js';
 import topologyRouter from './routes/topology.js';
 import environmentRouter from './routes/environment.js';
+import healthRouter from './routes/health.js';
 
 const app = express();
 const PORT = 3001;
@@ -27,6 +28,7 @@ app.use('/evidence', evidenceRouter);
 app.use('/reports', reportsRouter);
 app.use('/topology', topologyRouter);
 app.use('/environment', environmentRouter);
+app.use('/health-nodes', healthRouter);
 
 app.listen(PORT, () => {
   console.log(`Zodiac AOS534 Mock API running on http://localhost:${PORT}`);

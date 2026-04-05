@@ -104,6 +104,26 @@ export const objects: GovernedObject[] = [
     description: 'VPN gateway — MFA declared required, bypass observed in auth logs.',
     tags: ['vpn', 'mfa-bypass', 'critical'],
   },
+  {
+    id: 'net-004', name: 'WAP-HQ-FLOOR2', type: 'network_appliance',
+    declared_state: 'wpa3_enterprise_enforced', verified_state: 'wpa2_personal_detected', alignment_state: 'misaligned',
+    truth_score: 33, confidence_score: 0.86, evidence_refs: ['evd-020'],
+    owner_system: 'NetworkAgent-D', risk_level: 'high', governance_status: 'advisory',
+    last_change: '2026-03-30T00:00:00Z', source_of_signal: 'NetworkAgent-D via Bedrock',
+    plane: 'control_plane', truth_label: 'simulated', site: 'HQ',
+    description: 'Wireless AP — declared WPA3-Enterprise, broadcasting WPA2-Personal. Physical-layer exposure risk.',
+    tags: ['wireless', 'wap', 'substrate-risk', 'scenario-4'],
+  },
+  {
+    id: 'net-005', name: 'RTR-CORE-01', type: 'network_appliance',
+    declared_state: 'bgp_policy_v3_active', verified_state: 'bgp_policy_v3_active', alignment_state: 'aligned',
+    truth_score: 89, confidence_score: 0.92, evidence_refs: ['evd-021'],
+    owner_system: 'NetworkAgent-D', risk_level: 'low', governance_status: 'allowed',
+    last_change: '2026-04-01T06:00:00Z', source_of_signal: 'NetworkAgent-D via Aegis',
+    plane: 'control_plane', truth_label: 'simulated', site: 'HQ',
+    description: 'Core router — BGP policy current, route tables validated.',
+    tags: ['router', 'core', 'bgp'],
+  },
   // CLOUD
   {
     id: 'cld-001', name: 'CloudTenant-Prod', type: 'cloud_tenant',
@@ -135,5 +155,15 @@ export const objects: GovernedObject[] = [
     plane: 'data_plane', truth_label: 'simulated', site: 'HQ',
     description: 'Edge API gateway — inline inspection declared active, proxy mode partially degraded. Fail-open behavior active.',
     tags: ['api', 'edge', 'fail-open', 'scenario-5'],
+  },
+  {
+    id: 'api-002', name: 'API-GW-CORE', type: 'api_gateway',
+    declared_state: 'inline_inspection_active', verified_state: 'inline_inspection_active', alignment_state: 'aligned',
+    truth_score: 88, confidence_score: 0.93, evidence_refs: ['evd-022'],
+    owner_system: 'APIInspect-E', risk_level: 'low', governance_status: 'allowed',
+    last_change: '2026-04-03T10:00:00Z', source_of_signal: 'APIInspect-E via Aegis',
+    plane: 'data_plane', truth_label: 'simulated', site: 'HQ',
+    description: 'Core API gateway — true inline mode. Fail-closed. All traffic synchronously inspected before transit.',
+    tags: ['api', 'core', 'fail-closed', 'inline'],
   },
 ];

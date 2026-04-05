@@ -137,14 +137,26 @@ Every simulated object MUST have:
 
 Plus plane tag: `control_plane | data_plane | evidence_plane | reporting_plane | governance_plane | identity_plane | advisory_plane`
 
-## Run Commands (update after scaffold)
+## Run Commands
 ```bash
-# API server
+# API server (port 3001)
 cd C:/Dev/Zodiac-AOS534/server && npm run dev
 
-# Frontend
+# Frontend (port 5173, proxies /api → :3001)
 cd C:/Dev/Zodiac-AOS534/client && npm run dev
 ```
+
+## GitHub Repo
+https://github.com/thamain1/Zodiac-AOS534
+
+## Phase 1 Status — COMPLETE
+Screens built: Mission Overview (1), Environment Truth Map (2),
+Identity Governance (3), Reporting/Storyboards (9), Scenario Playback (13)
+Server: All fixtures, routes, SSE streaming operational
+
+## Phase 2 Status — COMPLETE
+Screens built: Network/Substrate (5), Advanced API (6), Evidence/Ledger (8), CP/DP Health (12)
+Server additions: HealthNode type, health fixture (15 nodes), health routes, WAP + API-GW-CORE objects, 4 new evidence artifacts
 
 ## Visual Design System (from image/ folder)
 

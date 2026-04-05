@@ -1,6 +1,6 @@
 import type {
   GovernedObject, Alert, LogEntry, EvidenceArtifact,
-  Scenario, TopologyNode, TopologyEdge, Environment, Report
+  Scenario, TopologyNode, TopologyEdge, Environment, Report, HealthNode
 } from '../types';
 
 const BASE = '/api';
@@ -79,5 +79,12 @@ export const api = {
 
   topology: {
     get: () => get<{ nodes: TopologyNode[]; edges: TopologyEdge[] }>('/topology'),
+  },
+
+  healthNodes: {
+    list: () => get<{ data: HealthNode[]; total: number }>('/health-nodes'),
+    get: (id: string) => get<HealthNode>(`/health-nodes/${id}`),
+    byPlane: (plane: 'control_plane' | 'data_plane') =>
+      get<{ data: HealthNode[]; total: number }>(`/health-nodes/plane/${plane}`),
   },
 };

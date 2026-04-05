@@ -10,6 +10,10 @@ import { EnvironmentTruthMap } from './components/screens/EnvironmentTruthMap';
 import { IdentityGovernance } from './components/screens/IdentityGovernance';
 import { ReportingStoryboards } from './components/screens/ReportingStoryboards';
 import { ScenarioPlayback } from './components/screens/ScenarioPlayback';
+import { NetworkSubstrate } from './components/screens/NetworkSubstrate';
+import { AdvancedAPI } from './components/screens/AdvancedAPI';
+import { EvidenceLedger } from './components/screens/EvidenceLedger';
+import { CPDPHealth } from './components/screens/CPDPHealth';
 import type { Screen } from './store';
 
 function ComingSoon({ name }: { name: string }) {
@@ -30,13 +34,13 @@ function ScreenRouter({ screen }: { screen: Screen }) {
     case 'reporting-storyboards': return <ReportingStoryboards />;
     case 'scenario-playback':     return <ScenarioPlayback />;
     case 'cloud-governance':      return <ComingSoon name="Cloud Governance" />;
-    case 'network-substrate':     return <ComingSoon name="Network / Substrate Governance" />;
-    case 'advanced-api':          return <ComingSoon name="Advanced API" />;
+    case 'network-substrate':     return <NetworkSubstrate />;
+    case 'advanced-api':          return <AdvancedAPI />;
     case 'ai-agent-governance':   return <ComingSoon name="AI Agent Governance" />;
-    case 'evidence-ledger':       return <ComingSoon name="Evidence / Ledger" />;
+    case 'evidence-ledger':       return <EvidenceLedger />;
     case 'secure-channel':        return <ComingSoon name="Secure Channel Visibility" />;
     case 'policies-alerts':       return <ComingSoon name="Policies / Alerts / Config" />;
-    case 'cp-dp-health':          return <ComingSoon name="Control Plane / Data Plane Health" />;
+    case 'cp-dp-health':          return <CPDPHealth />;
     case 'roadmap':               return <ComingSoon name="Roadmap / Next Waves" />;
     default:                      return <MissionOverview />;
   }

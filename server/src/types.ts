@@ -161,6 +161,23 @@ export interface Environment {
   current_scenario?: string;
 }
 
+export interface HealthNode {
+  id: string;
+  name: string;
+  plane: 'control_plane' | 'data_plane';
+  type: string;
+  status: 'healthy' | 'degraded' | 'critical' | 'unknown';
+  health_score: number;
+  latency_ms: number;
+  uptime_pct: number;
+  last_check: string;
+  description: string;
+  site: string;
+  truth_label: TruthLabel;
+  dependencies: string[];
+  metadata?: Record<string, unknown>;
+}
+
 export interface Report {
   id: string;
   title: string;
